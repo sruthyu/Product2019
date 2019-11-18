@@ -1,0 +1,25 @@
+<div>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <th>ProductID</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Mfg Date</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pro of products">
+                <td>{{pro.productid}}</td>
+                <td>{{pro.productname}}</td>
+                <td>{{pro.productdescription}}</td>
+                <td>{{pro.promfgdate}}</td>
+                <td>{{pro.productprice}}</td>
+        
+ <button [routerLink]="['/update',pro.productid]" class="btn btn-info">Edit</button>
+ <button (click)= "deleteProduct(pro.productid)" class="btn btn-danger"  style="margin-left: 10px">Delete</button>
+            </tr>
+
+        </tbody>
+    </table>   
+</div>
